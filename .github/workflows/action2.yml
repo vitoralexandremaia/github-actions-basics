@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Job 1 executed!"
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Job 2 executed!"    
+  job3:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Job 3 executed!"         
